@@ -14,7 +14,8 @@
 
 2. Edit the .ps1 file. Specify the username and password.
 *If you prefer to change the authenticate type, please feel free: https://pnp.github.io/cli-microsoft365/cmd/login*
- 
+![Login](images/login.png "Login")
+
 3. Save the file.
 
 4. Launch Windows PowerShell
@@ -33,6 +34,7 @@ You’ll be prompted to consent to a set of permissions. Consent on behalf of yo
 10. Retry executing the script once consent has been accepted. 
 
 11. The script will display progress as it crawls through your Power Platform environments
+![Progress](images/progress.png "Progress")
 
 12. Once you see **** INVENTORY DISCOVERY COMPLETE **** on the console screen, a .csv file will be generated in the same location (filename: PowerPlatform-Export-ALL.csv)
 
