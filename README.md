@@ -4,8 +4,8 @@
 
 ## Pre-requisites
 
- 1. PowerShell 7
- 2. CLI for Microsoft 365
+ 1. [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+ 2. [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/)
  3. Login credentials with at least the Power Platform Admin role
 
 ## Instructions
@@ -48,7 +48,7 @@ You’ll be prompted to consent to a set of permissions. Consent on behalf of yo
 
 ## Instructions
 
-1. Navigate to the Power Platform Admin Center: Power Platform admin center (microsoft.com)
+1. Navigate to the Power Platform Admin Center: [Power Platform admin center](https://admin.powerplatform.microsoft.com/)
 
 2. Navigate to Resources > Capacity
 
