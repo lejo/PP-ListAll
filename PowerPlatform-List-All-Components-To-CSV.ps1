@@ -1,3 +1,18 @@
+# Check PS version
+$ps_version = (get-host).version.major
+if ($ps_version -lt 7) {
+  Write-Host -f Red "Powershell version 7 or greater is required. You are using version $($ps_version)"
+  exit 1
+}
+
+# Check for m365 CLI
+$m365_command =  Get-Command -ErrorAction SilentlyContinue -Type Application m365
+if (!$m365_command) {
+  Write-Host -f Red "The m365 CLI is required. Install from https://pnp.github.io/cli-microsoft365/"
+  exit 1
+}
+
+
 $m365Status = m365 status
 
 if ($m365Status -eq "Logged Out") {
