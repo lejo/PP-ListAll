@@ -15,9 +15,10 @@ if (!$m365_command) {
 
 $m365Status = m365 status
 
-if ($m365Status -eq "Logged Out") {
+if ($m365Status -eq "`"Logged Out`"") {
+    Write-Host -f Yellow "Logging into m365..."
     # Connection to Microsoft 365
-    m365 login --authType password --userName [USERNAME] --password [PASSWORD]
+    m365 login
 }
 
 $environments = m365 pp environment list --asAdmin | ConvertFrom-Json
