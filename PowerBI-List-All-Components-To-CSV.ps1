@@ -28,10 +28,12 @@ function Get-DatasetInfo {
     $datasetInfo = @()
 
     foreach ($dataset in $datasets) {
+        Write-Host -f Green "Processing $($datasets.Count) datasets";
         $dataSources = Get-PowerBIDataSource -WorkspaceId $WorkspaceId -DatasetId $dataset.Id
 
         $dataSourceInfo = @()
         foreach ($dataSource in $dataSources) {
+            Write-Host -f Green "Processing $($dataSources.Count) dataSources";
             $dataSourceInfo += @{
                 DataSourceId = $dataSource.DatasourceId
                 DataSourceType = $dataSource.DatasourceType
