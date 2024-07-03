@@ -42,7 +42,7 @@ As a Power BI Administrator go to the Power BI Tenant Settings and authorize the
 
 | Scope      | Resource | API
 | ----------- | -------- |  ---------------- |
-| Power BI Metadata  | Workspaces,DataSets,Reports,Dashboards,Permissions,Schema & Lineage | [Admin Scan API – GetModifiedWorkspaces](https://docs.microsoft.com/en-us/rest/api/power-bi/admin/workspace-info-get-modified-workspaces); [Admin Scan API – PostWorkspaceInfo](https://docs.microsoft.com/en-us/rest/api/power-bi/admin/workspace-info-post-workspace-info); [Admin Scan API – GetScanStatus (loop)](https://docs.microsoft.com/en-us/rest/api/power-bi/admin/workspace-info-get-scan-status); [Admin Scan API – GetScanResult](https://docs.microsoft.com/en-us/rest/api/power-bi/admin/workspace-info-get-scan-result)
+| Power BI Metadata  | Workspaces,DataSets,Reports,Dashboards,Permissions,Schema & Lineage|
 
 <br>
 <br>
@@ -54,11 +54,7 @@ Basics
 ![image](https://user-images.githubusercontent.com/10808715/138612825-d6a18c1f-f6fd-429d-b96f-a9d9b867a3ee.png)
 
 
-# Setup - As a Local PowerShell
-
-![image](https://user-images.githubusercontent.com/10808715/121097907-b0f53000-c7ec-11eb-806c-36a6b461a0d5.png)
-
 ## Install Required PowerShell Modules (as Administrator)
 ```
-Install-Module -Name MicrosoftPowerBIMgmt -RequiredVersion 1.2.1026
+Install-Module -Name MicrosoftPowerBIMgmt
 ```
