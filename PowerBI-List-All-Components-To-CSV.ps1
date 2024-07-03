@@ -59,7 +59,10 @@ $allData = @()
 # Get all workspaces
 $workspaces = Get-PowerBIWorkspace
 
+Write-Host -f Green "Processing $($workspaces.Count) workspaces";
+
 foreach ($workspace in $workspaces) {
+    Write-Host -f Green "Processing workspace: $($workspace.Name)"
     $workspaceId = $workspace.Id
     $workspaceName = $workspace.Name
 
@@ -67,6 +70,7 @@ foreach ($workspace in $workspaces) {
     $reports = Get-PowerBIReport -WorkspaceId $workspaceId
 
     foreach ($report in $reports) {
+        Write-Host -f Green "Processing: $($reports.Count) reports"
         $reportId = $report.Id
         $reportName = $report.Name
         $reportWebUrl = $report.WebUrl
@@ -109,4 +113,5 @@ foreach ($workspace in $workspaces) {
 # Export data to CSV
 $allData | Export-Csv -Path $outputFilePath -NoTypeInformation
 
+Write-Host -f Green "***** INVENTORY DISCOVERY COMPLETE *****"
 Write-Host "Power BI inventory exported to: $outputFilePath"
