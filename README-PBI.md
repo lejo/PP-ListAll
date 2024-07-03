@@ -1,7 +1,61 @@
 
+# Power BI Inventory Export Script
+
+This script automates the discovery and export of Power BI workspace, report, dataset, dashboard, data source, and permission information into a CSV file.
+
+## Prerequisites
+
+1. **Power BI Account**: Ensure you have access to a Power BI account with sufficient permissions to read information from workspaces and reports.
+   
+2. **Power BI PowerShell Module**: Install the `MicrosoftPowerBIMgmt` module if not already installed. You can install it using the following PowerShell command:
+   ```powershell
+   Install-Module -Name MicrosoftPowerBIMgmt
+
+3. **PowerShell Execution Policy**: Ensure that PowerShell execution policy allows running scripts. You can set it to RemoteSigned with the following command:
+    ```powershell
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+## Running the Script
+
+1. **Download the Script**: Download the `PowerBI-List-All-Components-To-CSV.ps1` script provided.
+
+2. **Edit Script (Optional)**: Open `PowerBI-List-All-Components-To-CSV.ps1` in a text editor to review or modify any parameters or configurations such as the output file path (`$outputFilePath`).
+
+3. **Run the Script**:
+   - Open PowerShell as an administrator.
+   - Navigate to the directory where `PowerBI-List-All-Components-To-CSV.ps1` is located.
+   - Run the script using the following command:
+     ```powershell
+     .\PowerBI-List-All-Components-To-CSV.ps1
+     ```
+
+4. **Review Output**: After the script completes, it will generate a CSV file containing Power BI inventory data. The default output file path is `PowerBI_Inventory.csv`. You can modify this path in the script if needed.
+
+
+## Output Format
+
+The exported CSV file will contain the following columns:
+
+- **WorkspaceId**: The unique identifier of the Power BI workspace.
+- **WorkspaceName**: The name of the Power BI workspace.
+- **ReportId**: The unique identifier of the Power BI report.
+- **ReportName**: The name of the Power BI report.
+- **ReportWebUrl**: The web URL of the Power BI report.
+- **DatasetId**: The unique identifier of the Power BI dataset.
+- **DatasetName**: The name of the Power BI dataset.
+- **DatasetWebUrl**: The web URL of the Power BI dataset.
+- **DataSourceId**: The unique identifier of the Power BI data source.
+- **DataSourceType**: The type of the Power BI data source.
+- **DataSourceConnectionDetails**: Details about the connection to the Power BI data source.
+- **DashboardCount**: The number of dashboards associated with the workspace.
+- **PermissionUserCount**: The number of users with permissions to access the workspace.
+
+
+
 # Requirements
 
-## Ensure you have the propper permissions
+## Ensure you have the proper permissions
 
 - A [Power BI Administrator](https://docs.microsoft.com/en-us/power-bi/admin/service-admin-role) account to change the [Tenant Settings](https://docs.microsoft.com/en-us/power-bi/guidance/admin-tenant-settings)
 - Permissions to create an [Azure Active Directory Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) 
@@ -40,9 +94,9 @@ As a Power BI Administrator go to the Power BI Tenant Settings and authorize the
 
 # API's Used
 
-| Scope      | Resource | API
-| ----------- | -------- |  ---------------- |
-| Power BI Metadata  | Workspaces,DataSets,Reports,Dashboards,Permissions,Schema & Lineage|
+| Scope      | Resource |
+| ----------- | -------- |
+| Power BI Metadata  | Workspaces,DataSets,Reports,Dashboards,  Permissions,Schema & Lineage|
 
 <br>
 <br>
@@ -53,8 +107,3 @@ Basics
 
 ![image](https://user-images.githubusercontent.com/10808715/138612825-d6a18c1f-f6fd-429d-b96f-a9d9b867a3ee.png)
 
-
-## Install Required PowerShell Modules (as Administrator)
-```
-Install-Module -Name MicrosoftPowerBIMgmt
-```
