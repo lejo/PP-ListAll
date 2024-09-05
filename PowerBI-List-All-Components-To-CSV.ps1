@@ -83,8 +83,8 @@ foreach ($workspace in $workspaces) {
         # Get dashboards in the workspace
         $dashboards = Get-PowerBIDashboard -WorkspaceId $workspaceId
 
-        # Get permissions for the workspace
-        $permissions = Get-PowerBIWorkspaceUser -WorkspaceId $workspaceId
+        # Get permissions (users) for the workspace
+        $permissions = Get-PowerBIWorkspace -Id $workspaceId -Scope Organization -Include All -Users
 
         # Prepare data for export
         foreach ($dataset in $datasetsUsed) {
@@ -102,7 +102,7 @@ foreach ($workspace in $workspaces) {
                     DataSourceType = $dataSource.DataSourceType
                     DataSourceConnectionDetails = $dataSource.DataSourceConnectionDetails
                     DashboardCount = $dashboards.Count
-                    PermissionUserCount = $permissions.Count
+                    PermissionUserCount = $permissions.Users.Count
                 }
 
                 # Add data to the array
